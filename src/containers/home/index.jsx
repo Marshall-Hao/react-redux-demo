@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { updateName } from "../../actions/home";
+import { updateName, queryAsyncName,updateAsyncName } from "../../actions/home";
 
 
 
 class Home extends Component {
     updateName = () => {
-        const {updateName} = this.props
+        const {updateName, queryAsyncName ,updateAsyncName} = this.props
 
         updateName('what the fuck')
+        queryAsyncName('async holy fuck')
+        updateAsyncName('async fuck u')
     }
 
 
@@ -29,5 +31,7 @@ class Home extends Component {
 export default connect((state) => {
     return state.homeReducer
 }, (dispatch) => ({
-    updateName: (params) =>  dispatch(updateName(params))
+    updateName: (params) =>  dispatch(updateName(params)),
+    queryAsyncName: (params) => dispatch(queryAsyncName(params)),
+    updateAsyncName: (params) => dispatch(updateAsyncName(params))
 }))(Home);

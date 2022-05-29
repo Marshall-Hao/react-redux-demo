@@ -10,7 +10,7 @@ const mutations = {
   },
   // * object里面定义function的方式
   [types.UPDATE_GLOBAL_NAME](state, action) {
-    console.log(action);
+    console.log(state, action);
     return {
       ...state,
       homeName: action.payload,
@@ -19,7 +19,7 @@ const mutations = {
 };
 
 export default function (state = initialState, action) {
-  console.log(action);
+  console.log(mutations, action);
   if (!mutations[action.type]) return state;
   return mutations[action.type](state, action);
 }
