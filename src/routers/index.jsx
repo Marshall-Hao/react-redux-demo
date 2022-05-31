@@ -7,6 +7,8 @@ import Immutable from '../containers/immutable'
 import ReduxActionDemo from '../containers/redux-action'
 import NewHome from "../containers/context/index";
 import NewContext from "../containers/new-context/provider";
+// import Type from '../containers/typescript/index.tsx'
+
 export default function() {
     return (
         <BrowserRouter>
@@ -17,6 +19,7 @@ export default function() {
                 <Route exact path='/reduxaction' element={<ReduxActionDemo />} />
                 <Route exact path='/home' element={<NewHome />} />
                 <Route exact path='/context' element={<NewContext />} /> 
+                {/* <Route exact path='/type' element={<Type />} />  */}
             </Routes>
         </BrowserRouter>
     )
